@@ -10,6 +10,7 @@ import UIKit
 protocol CharacterDelgate {
     func reloadData()
 }
+
 class CharacterViewModel {
     
     private var characters = [Character]()

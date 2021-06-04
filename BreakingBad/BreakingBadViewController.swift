@@ -8,7 +8,6 @@
 import UIKit
 
 class BreakingBadViewController: UIViewController, UISearchResultsUpdating, CharacterDelgate {
-    
 
     let searchDataSource = CharacterSearch()
     
@@ -34,12 +33,16 @@ class BreakingBadViewController: UIViewController, UISearchResultsUpdating, Char
         
         searchDataSource.fetch("https://breakingbadapi.com/api/characters")
         breakingBadCollectionView.dataSource = searchDataSource
+        
         let search = UISearchController(searchResultsController: nil)
         search.obscuresBackgroundDuringPresentation = false
         search.searchBar.placeholder = "Find a character"
         search.searchResultsUpdater = self
         navigationItem.searchController = search
         
+        search.dismiss(animated: true) {
+            self.reloadData()
+        }
     }
     
     func updateSearchResults(for searchController: UISearchController) {

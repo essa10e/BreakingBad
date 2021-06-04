@@ -27,7 +27,6 @@ class CharacterSearch: NSObject, UICollectionViewDataSource {
         }
     }
     
-    
     func fetch(_ urlString: String) {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
