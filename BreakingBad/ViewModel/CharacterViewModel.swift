@@ -11,7 +11,7 @@ protocol CharacterDelgate {
     func reloadData()
 }
 
-class CharacterViewModel {
+final class CharacterViewModel {
     
     private var characters = [Character]()
     
@@ -36,14 +36,23 @@ class CharacterViewModel {
         }
     }
     
+    /// This function returns number of characters.
+    /// - Parameter section: collectionView section
+    /// - Returns: returns an integer
     func numberOfItemsInSection(section: Int) -> Int {
         return characters.count
     }
     
+    /// This function returns a specific 'Character'
+    /// - Parameter row: an integer of the specified 'Character'
+    /// - Returns: return a 'Character'
     func getData(row: Int) -> Character? {
         return characters[row]
     }
-
+    
+    /// This function returns a 'Character' of specific indexPath
+    /// - Parameter index: an integer
+    /// - Returns: return a 'Character'
     func characterItem(at index: Int) -> Character {
         return characters[index]
     }

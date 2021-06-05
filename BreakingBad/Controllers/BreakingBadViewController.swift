@@ -7,13 +7,13 @@
 
 import UIKit
 
-class BreakingBadViewController: UIViewController, UISearchResultsUpdating, CharacterDelgate {
-
+final class BreakingBadViewController: UIViewController, UISearchResultsUpdating, CharacterDelgate {
+    
     let searchDataSource = CharacterSearch()
     
     // Mark:- Outlets
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var breakingBadCollectionView: UICollectionView!
+    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet private weak var breakingBadCollectionView: UICollectionView!
     
     // Mark:- ViewModel
     var characterViewModel: CharacterViewModel?
@@ -34,6 +34,12 @@ class BreakingBadViewController: UIViewController, UISearchResultsUpdating, Char
         searchDataSource.fetch("https://breakingbadapi.com/api/characters")
         breakingBadCollectionView.dataSource = searchDataSource
         
+        setupSearchBar()
+    }
+    
+    
+    /// This function set up the search bar
+    private func setupSearchBar() {
         let search = UISearchController(searchResultsController: nil)
         search.obscuresBackgroundDuringPresentation = false
         search.searchBar.placeholder = "Find a character"
@@ -91,13 +97,19 @@ extension BreakingBadViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let vc = storyboard?.instantiateViewController(withIdentifier: "CharactersDetailVC") as? CharactersDetailViewController else {
-                    fatalError("Unable to instantiate detail view controller.")
-                }
 
-        let item = characterViewModel?.characterItem(at: indexPath.row)
-        vc.character = item
+        let character = characterViewModel!.characterItem(at: indexPath.row)
+ 
+        guard let characterDetailViewController = storyboard?.instantiateViewController(identifier: "CharactersDetailVC", creator: { coder in
+            return CharactersDetailViewController(coder: coder, character: character)
+        }) else {
+            return
+        }
         
-        self.navigationController?.pushViewController(vc, animated: true)
+        self.navigationController?.pushViewController(characterDetailViewController, animated: true)
     }
 }
+
+/**
+ option command /  ... to docummenting /// 
+ */

@@ -11,11 +11,13 @@ protocol Network {
     func fetchCharacters(completed: @escaping (Result<[Character], ErrorMessage>) -> Void)
 }
 
-class NetworkManager: Network {
+final class NetworkManager: Network {
     static let shared = NetworkManager()
     
     private let baseURL = "https://breakingbadapi.com/api/characters"
     
+    /// This function make a call to fetch all Characters
+    /// - Parameter completed:
     func fetchCharacters(completed: @escaping (Result<[Character], ErrorMessage>) -> Void) {
         
         guard let url = URL(string: baseURL) else {

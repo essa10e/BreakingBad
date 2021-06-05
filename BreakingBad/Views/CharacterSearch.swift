@@ -7,12 +7,13 @@
 
 import UIKit
 
-class CharacterSearch: NSObject, UICollectionViewDataSource {
+final class CharacterSearch: NSObject, UICollectionViewDataSource {
     
     var characters = [Character]()
     var filteredCharacters = [Character]()
     var dataChanged: (() -> Void)?
-
+    
+    /// A variable to filter 'Character' searched by character name
     var filterText: String? {
         didSet {
             filteredCharacters = characters.searchByName(filterText)
@@ -20,6 +21,7 @@ class CharacterSearch: NSObject, UICollectionViewDataSource {
         }
     }
     
+    /// A variable to filter 'Character' by season appearance
     var filterAppearance: Int? {
         didSet {
             filteredCharacters = characters.searchByAppearance(filterAppearance)
@@ -27,6 +29,8 @@ class CharacterSearch: NSObject, UICollectionViewDataSource {
         }
     }
     
+    /// This function to fetch characters and get the data ready for search
+    /// - Parameter urlString: This accept url string.
     func fetch(_ urlString: String) {
         let decoder = JSONDecoder()
         decoder.dateDecodingStrategy = .iso8601
@@ -48,7 +52,6 @@ class CharacterSearch: NSObject, UICollectionViewDataSource {
         cell.setup(with: character)
         return cell
     }
-    
 }
 
 extension JSONDecoder {
@@ -58,7 +61,6 @@ extension JSONDecoder {
         DispatchQueue.global().async {
             do {
                 let data = try Data(contentsOf: url)
-                
                 let downloadedData = try self.decode(type, from: data)
                 
                 DispatchQueue.main.async {

@@ -23,12 +23,22 @@ extension UIImageView {
 }
 
 class CharacterCell: UICollectionViewCell {
-    @IBOutlet weak var characterImageView: UIImageView!
-    @IBOutlet weak var characterNameLabel: UILabel!
+    @IBOutlet private weak var characterImageView: UIImageView!
+    @IBOutlet private weak var characterNameLabel: UILabel!
     
+    struct ViewModel {
+        var charName: String
+        var imagurl: URL
+    }
+    
+    var viewModel: ViewModel? {
+        didSet {
+            characterNameLabel.text = viewModel?.charName
+        }
+    }
     func setup(with character: Character) {
         //characterImageView.image = character.image
         characterNameLabel.text = character.name
-        characterImageView.load(url: URL(string: character.img!)!)
+        characterImageView.load(url: character.img)
     }
 }
