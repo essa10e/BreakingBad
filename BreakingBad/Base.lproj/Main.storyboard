@@ -145,7 +145,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0k9-q0-1ne">
                                 <rect key="frame" x="20" y="410" width="374" height="288"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Character Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dA4-u7-L12">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nickname:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dA4-u7-L12">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="29"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -210,7 +210,6 @@
                     <connections>
                         <outlet property="characterAppearanceLabel" destination="rAb-rk-NUa" id="6RD-Ld-P3S"/>
                         <outlet property="characterImageView" destination="Tx0-Na-Pab" id="waN-sN-scr"/>
-                        <outlet property="characterNameLabel" destination="dA4-u7-L12" id="42E-JD-ste"/>
                         <outlet property="characterNicknameLabel" destination="Vka-J2-jCU" id="RY0-wl-OsQ"/>
                         <outlet property="characterOccupationLabel" destination="fxv-Ra-mCc" id="cK6-ib-SlK"/>
                         <outlet property="characterStatusLabel" destination="Tck-1v-Pi0" id="U04-4k-gnQ"/>
