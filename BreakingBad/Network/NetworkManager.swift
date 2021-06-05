@@ -2,8 +2,6 @@
 //  NetworkManager.swift
 //  BreakingBad
 //
-//  Created by Essa Aldo on 6/3/21.
-//
 
 import Foundation
 

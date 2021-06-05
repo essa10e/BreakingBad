@@ -2,8 +2,7 @@
 //  CharacterSearch.swift
 //  BreakingBad
 //
-//  Created by Essa Aldo on 6/4/21.
-//
+
 
 import UIKit
 

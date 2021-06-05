@@ -2,8 +2,6 @@
 //  ViewController.swift
 //  BreakingBad
 //
-//  Created by Essa Aldo on 6/3/21.
-//
 
 import UIKit
 
@@ -52,7 +50,22 @@ final class BreakingBadViewController: UIViewController, UISearchResultsUpdating
     }
     
     func updateSearchResults(for searchController: UISearchController) {
-        searchDataSource.filterText = searchController.searchBar.text
+        
+        /// This boolean variable to test if the searchBox text is a number in order to convert it to an int.
+        var isNumberValue: Bool?
+        
+        for i in 1...5 {
+            if ((searchController.searchBar.text?.contains("\(i)") == true)) {
+                isNumberValue = true
+                break;
+            }
+        }
+        
+        if let _ = isNumberValue {
+            searchDataSource.filterAppearance = (searchController.searchBar.text! as NSString).integerValue
+        } else {
+            searchDataSource.filterText = searchController.searchBar.text
+        }
     }
     
     // Mark:- Delegate
