@@ -18,7 +18,7 @@ A simple iOS application, that present "Breaking Bad" Show characters.
 - Swift.
 
 # App screenshot:
-
+<img src="https://user-images.githubusercontent.com/11970276/120901005-2a7ef980-c606-11eb-8841-8347b6cb480c.png" width="250" height="250" />
 ![HomeScreen](https://user-images.githubusercontent.com/11970276/120901005-2a7ef980-c606-11eb-8841-8347b6cb480c.png)
 ![searchByName](https://user-images.githubusercontent.com/11970276/120901007-2c48bd00-c606-11eb-968a-108405fd0c2d.png)
 ![SearchBySeasonAppearance](https://user-images.githubusercontent.com/11970276/120901010-2f43ad80-c606-11eb-9a41-94cb10346e72.png)
