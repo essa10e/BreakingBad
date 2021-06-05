@@ -35,7 +35,6 @@ final class BreakingBadViewController: UIViewController, UISearchResultsUpdating
         setupSearchBar()
     }
     
-    
     /// This function set up the search bar
     private func setupSearchBar() {
         let search = UISearchController(searchResultsController: nil)
@@ -122,7 +121,3 @@ extension BreakingBadViewController: UICollectionViewDataSource {
         self.navigationController?.pushViewController(characterDetailViewController, animated: true)
     }
 }
-
-/**
- option command /  ... to docummenting /// 
- */
