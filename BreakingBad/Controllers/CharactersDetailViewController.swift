@@ -34,5 +34,4 @@ final class CharactersDetailViewController: UIViewController {
         characterAppearanceLabel?.text = "Season: \(character.appearance)"
         characterImageView.load(url: character.img)
     }
-
 }
