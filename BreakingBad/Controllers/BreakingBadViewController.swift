@@ -122,7 +122,3 @@ extension BreakingBadViewController: UICollectionViewDataSource {
         self.navigationController?.pushViewController(characterDetailViewController, animated: true)
     }
 }
-
-/**
- option command /  ... to docummenting /// 
- */
