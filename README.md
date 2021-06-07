@@ -12,7 +12,7 @@ A simple iOS application, that present "Breaking Bad" Show characters.
 - DI.
 
 # External Dependency:
-- KingFisher to show/caches images.
+- KingFisher to asynchronously loads, display and caches images.
 
 # Language:
 - Swift.
