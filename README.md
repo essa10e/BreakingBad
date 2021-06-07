@@ -4,8 +4,8 @@ A simple iOS application, that present "Breaking Bad" Show characters.
 # Features:
 - Main screen shows all the characters.
 - Search Bar:
-  - Find a specific character.
-  - Find all characters appeared in the same season.
+  - Find a specific character ( name).
+  - Find all characters appeared in the same season (by typing the season number).
 - Detail screen for each specific character.
 - Unit test included.
 - MVVM architecture.
